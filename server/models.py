@@ -65,10 +65,10 @@ class RestaurantPizza(db.Model, SerializerMixin):
     pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'))
 
 
-    # Relationship mapping the assignment to related restaurant
+    # Relationship mapping pizza to related restaurant
     restaurant = db.relationship('Restaurant', back_populates='restaurant_pizzas')
 
-    # Relationship mapping the assignment to related pizza
+    # Relationship mapping the restaurant to related pizza
     pizza = db.relationship('Pizza', back_populates='restaurant_pizzas')
     
 
